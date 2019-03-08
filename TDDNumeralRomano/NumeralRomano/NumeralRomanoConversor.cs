@@ -7,7 +7,7 @@ namespace NumeralRomano
         public string InteiroParaRomano(int numero)
         {
             if ((numero < 0) || (numero > 3000))
-                throw new Exception("Só é possível inserir um valor entre 0 e 3000");
+                throw new ArgumentException("Só é possível inserir um valor entre 0 e 3000");
 
             if (numero < 1)
                 return string.Empty;
@@ -39,8 +39,8 @@ namespace NumeralRomano
             if (numero >= 1)
                 return "I" + InteiroParaRomano(numero - 1);
 
-                
-            throw new Exception("Erro desconhecido");
+
+            throw new ArgumentException("Erro desconhecido");
         }
     }
 }

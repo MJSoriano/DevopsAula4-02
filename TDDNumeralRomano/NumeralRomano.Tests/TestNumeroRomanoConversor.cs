@@ -49,10 +49,10 @@ namespace NumeralRomano.Tests
         [Fact]
         public void TestName()
         {
-            Exception ex = Assert.Throws<Exception>(() => _numeroRomanoConversor.InteiroParaRomano(-10));
+            Exception ex = Assert.Throws<ArgumentException>(() => _numeroRomanoConversor.InteiroParaRomano(-10));
             Assert.Equal("Só é possível inserir um valor entre 0 e 3000", ex.Message);
 
-            Exception ex2 = Assert.Throws<Exception>(() => _numeroRomanoConversor.InteiroParaRomano(4000));
+            Exception ex2 = Assert.Throws<ArgumentException>(() => _numeroRomanoConversor.InteiroParaRomano(4000));
             Assert.Equal("Só é possível inserir um valor entre 0 e 3000", ex2.Message);
         }
     }
